@@ -1,0 +1,191 @@
+<!--
+  Generated template for the ForumFeedPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+
+    <ion-buttons start>
+      <button ion-button icon-only >
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>Forum</ion-title>
+
+    <ion-buttons end>
+      <button ion-button clear (click)=clickedPost()>
+        Post
+      </button>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+   <ion-segment [(ngModel)]="forum_top_menu">
+    <ion-segment-button value="feed">
+      Feed
+    </ion-segment-button>
+    <ion-segment-button value="category">
+      Category
+    </ion-segment-button>
+    <ion-segment-button value="unanswered">
+      Unanswered
+    </ion-segment-button>
+  </ion-segment>
+
+</ion-header>
+
+
+
+<ion-content padding>
+
+  <div [ngSwitch]="forum_top_menu">
+    
+  <div *ngSwitchCase="'feed'" >
+    
+  <ion-card>
+
+    <ion-card-content>
+      <ion-badge item-start color="light">Cooking</ion-badge>
+      <ion-card-title (click)=indi_postClicked()>
+        <b>Did you like cooking?</b>
+      </ion-card-title>
+
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="images/forum/feed/user1.jpg">
+        </ion-avatar>
+        <h2>Marty McFly</h2>
+        <p>Answered Fri</p>
+      </ion-item>
+      <p>
+        Yes.. I always cook myself a delicious meal after work...
+      </p>
+
+      <button ion-button round small>Follow</button>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card>
+
+    <ion-card-content>
+      <ion-badge item-start color="light">Travel</ion-badge>
+      <ion-card-title (click)=indi_postClicked()>
+        <b>Did you like travel?</b>
+      </ion-card-title>
+
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="images/forum/feed/user2.jpg">
+        </ion-avatar>
+        <h2>Marty McFly</h2>
+        <p>Answered Fri</p>
+      </ion-item>
+      <p>
+        Yes.. I have been to 100 countries so far
+      </p>
+
+      <button ion-button round small outline>Unfollow</button>
+    </ion-card-content>
+
+  </ion-card>
+
+  </div>
+
+  <div *ngSwitchCase="'category'" class="category" >
+    <!--<page-forum-category></page-forum-category>-->
+
+     <ion-grid>
+
+    <ion-row>
+ 
+      <ion-col col-6>
+        <ion-card >
+
+          <img src="images/forum/category/cooking.jpg"/>
+          <div class="card-title">Cooking</div>
+          <ion-card-content no-padding>
+            <button ion-button round color="secondary" small>Subscribe</button>
+          </ion-card-content>
+
+       </ion-card>
+    </ion-col>
+
+    <ion-col col-6>
+        <ion-card >
+
+          <img src="images/forum/category/travel.jpg"/>
+          <div class="card-title">Travel</div>
+          <ion-card-content no-padding>
+            <button  ion-button color="default" round small>Unsubscribe</button>
+          </ion-card-content>
+
+       </ion-card>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col col-6>
+        <ion-card >
+
+          <img src="images/forum/category/sport.jpg"/>
+          <div class="card-title">Sport</div>
+          <ion-card-content no-padding>
+            <button ion-button round color="secondary" small>Subscribe</button>
+          </ion-card-content>
+
+       </ion-card>
+      </ion-col>
+
+      <ion-col col-6>
+        <ion-card >
+
+          <img src="images/forum/category/music.jpg"/>
+          <div class="card-title">Music</div>
+          <ion-card-content no-padding >
+            <button  ion-button color="default" round small>Unsubscribe</button>
+          </ion-card-content>
+
+       </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  </div>
+
+  <div *ngSwitchCase="'unanswered'">
+      <ion-card>
+
+      <ion-card-content>
+
+        <ion-badge item-start color="light">Sport</ion-badge>
+        <ion-card-title (click)=indi_postClicked()>
+          <b>Did you like cooking?</b>
+        </ion-card-title>
+
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="images/forum/feed/user1.jpg">
+          </ion-avatar>
+          <h2>Marty McFly</h2>
+          <p>Answered Fri</p>
+        </ion-item>
+        <p>
+          Yes.. I always cook myself a delicious meal after work...
+        </p>
+
+        <button ion-button round small>Answer</button>
+
+      </ion-card-content>
+
+    </ion-card>
+  </div>
+
+</div>
+  
+
+</ion-content>
